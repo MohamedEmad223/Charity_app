@@ -1,7 +1,9 @@
-import 'package:charity_app/core/helpers/app_images.dart';
 import 'package:charity_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../widgets/image_widgets.dart';
+import '../widgets/search_bar_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -24,32 +26,10 @@ class HomeScreen extends StatelessWidget {
             ),
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: Column(
-                children: [
-                  SizedBox(height: 30.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Spacer(),
-                      Center(child: Image.asset(AppImages.homeImages)),
-                      Spacer(),
-                      Image.asset(AppImages.searchImages)
-                    ],
-                  ),
-                ],
-              ),
+              child: SearchBarWidget(),
             ),
           ),
-          Positioned(
-            top: 100.h,
-            left: 0,
-            right: 0,
-            child: Center(
-              child: Image.asset(
-                'assets/images/home/Slider.png',
-              ),
-            ),
-          ),
+          ImageWidgets(),
         ],
       ),
     );
