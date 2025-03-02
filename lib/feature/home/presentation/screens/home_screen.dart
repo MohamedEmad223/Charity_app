@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../widgets/image_widgets.dart';
 import '../widgets/search_bar_widget.dart';
+import '../widgets/text_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,6 +31,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           ImageWidgets(),
+          TextWidgets(),
         ],
       ),
     );
