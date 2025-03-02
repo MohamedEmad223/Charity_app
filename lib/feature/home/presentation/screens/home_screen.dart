@@ -9,35 +9,47 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      body: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
-            width: 375.w,
-            height: 187.h,
+            width: double.infinity,
+            height: 200.h,
             decoration: BoxDecoration(
-                color: AppColors.primaryColor,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(40.r),
-                    bottomRight: Radius.circular(40.r))),
-            child: Column(
-              children: [
-                SizedBox(height: 40.h),
-                Row(
-                  children: [
-                    Center(
-                      child: Image.asset(
-                        AppImages.homeImages,
-                        alignment: Alignment.center,
-                      ),
-                    ),
-                    Align(
-                        alignment: Alignment.topRight,
-                        child: Image.asset(AppImages.searchImages))
-                  ],
-                )
-              ],
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(60.r),
+                bottomRight: Radius.circular(60.r),
+              ),
             ),
-          )
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: Column(
+                children: [
+                  SizedBox(height: 30.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Spacer(),
+                      Center(child: Image.asset(AppImages.homeImages)),
+                      Spacer(),
+                      Image.asset(AppImages.searchImages)
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            top: 100.h,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Image.asset(
+                'assets/images/home/Slider.png',
+              ),
+            ),
+          ),
         ],
       ),
     );
