@@ -1,9 +1,7 @@
 import 'package:charity_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../core/helpers/app_images.dart';
-import '../../../../core/theme/app_text_style.dart';
+import '../widgets/bank_card_widgets.dart';
 import '../widgets/image_widgets.dart';
 import '../widgets/search_bar_widget.dart';
 import '../widgets/text_widgets.dart';
@@ -37,66 +35,14 @@ class HomeScreen extends StatelessWidget {
           TextWidgets(
             top: 300.h,
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.w),
-            child: Container(
-              margin: EdgeInsets.only(top: 335.h),
-              width: 225.w,
-              height: 230.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(0, 0),
-                    blurRadius: 4,
-                    spreadRadius: 0,
-                  )
-                ],
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10.r),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Image.asset(AppImages.bankImages),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 20.w),
-                      child: Text(
-                        'Egyptian Food Bank',
-                        style: AppTextStyle.poppins16W500blackcColor,
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20.h),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 20.w),
-                        child: Text(
-                          'The first Egyptian\n charitable organization',
-                          style: AppTextStyle.poppins12W500secondeGreyColor
-                              .copyWith(
-                            fontSize: 12.sp,
-                          ),
-                        ),
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Padding(
-                          padding: EdgeInsets.only(right: 15.w),
-                          child: Image.asset(AppImages.homeArrowImages),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
-            ),
+          ListView.builder(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            clipBehavior: Clip.none,
+            itemCount: 10,
+            itemBuilder: (context, index) => Expanded(child: BankCardWidgets()),
           ),
+          Positioned(top: 600.h, child: Text('asjbdjajfd')),
         ],
       ),
     );
