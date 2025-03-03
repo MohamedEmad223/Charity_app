@@ -31,7 +31,21 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           ImageWidgets(),
-          TextWidgets(),
+          TextWidgets(
+            top: 300.h,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 350.h),
+            width: double.infinity,
+            height: 280.h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10.r),
+                topRight: Radius.circular(10.r),
+              ),
+            ),
+          ),
         ],
       ),
     );
