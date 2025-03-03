@@ -15,7 +15,7 @@ class CharityApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Charity App',
-        initialRoute: Routes.splahScreen,
+        initialRoute: Routes.homeScreen,
         onGenerateRoute: AppRoutes().ongenerateRoute,
       ),
     );

@@ -65,6 +65,7 @@ flutter:
   assets:
     - assets/images/splash/
     - assets/images/onBoarding/
+    - assets/images/home/
     - assets/icons/
     - assets/fonts/
     - assets/images/login/

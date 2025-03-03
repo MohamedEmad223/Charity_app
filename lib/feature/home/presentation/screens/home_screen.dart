@@ -1,4 +1,10 @@
+import 'package:charity_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../widgets/image_widgets.dart';
+import '../widgets/search_bar_widget.dart';
+import '../widgets/text_widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -6,8 +12,41 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text('Home Screen'),
+      body: Stack(
+        clipBehavior: Clip.none,
+        children: [
+          Container(
+            width: double.infinity,
+            height: 200.h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(60.r),
+                bottomRight: Radius.circular(60.r),
+              ),
+            ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 10.w),
+              child: SearchBarWidget(),
+            ),
+          ),
+          ImageWidgets(),
+          TextWidgets(
+            top: 300.h,
+          ),
+          Container(
+            margin: EdgeInsets.only(top: 350.h),
+            width: double.infinity,
+            height: 280.h,
+            decoration: BoxDecoration(
+              color: AppColors.primaryColor,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(10.r),
+                topRight: Radius.circular(10.r),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

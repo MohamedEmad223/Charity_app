@@ -16,4 +16,7 @@ class AppImages {
   static const String facbookImage = 'assets/icons/Facebook.svg';
   static const String appleImage = 'assets/icons/apple.svg';
 
+  // images of home screen
+  static const String homeImages = 'assets/images/home/home_logo.png';
+  static const String searchImages = 'assets/images/home/search-normal.png';
 }
