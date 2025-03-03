@@ -19,4 +19,6 @@ class AppImages {
   // images of home screen
   static const String homeImages = 'assets/images/home/home_logo.png';
   static const String searchImages = 'assets/images/home/search-normal.png';
+  static const String bankImages = 'assets/images/home/image.png';
+  static const String homeArrowImages = 'assets/images/home/chevron-double-left.png';
 }

@@ -15,7 +15,9 @@ class TextWidgets extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Text(
           'Nearby Charities',
-          style: AppTextStyle.poppins20W500blackColor,
+          style: AppTextStyle.poppins16W500blackcColor.copyWith(
+            fontSize: 20.sp,
+          ),
         ),
       ),
     );

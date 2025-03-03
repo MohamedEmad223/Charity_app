@@ -1,7 +1,7 @@
 import 'package:charity_app/core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../widgets/bank_card_widgets.dart';
 import '../widgets/image_widgets.dart';
 import '../widgets/search_bar_widget.dart';
 import '../widgets/text_widgets.dart';
@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Stack(
         clipBehavior: Clip.none,
         children: [
@@ -34,18 +35,14 @@ class HomeScreen extends StatelessWidget {
           TextWidgets(
             top: 300.h,
           ),
-          Container(
-            margin: EdgeInsets.only(top: 350.h),
-            width: double.infinity,
-            height: 280.h,
-            decoration: BoxDecoration(
-              color: AppColors.primaryColor,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(10.r),
-                topRight: Radius.circular(10.r),
-              ),
-            ),
+          ListView.builder(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            clipBehavior: Clip.none,
+            itemCount: 10,
+            itemBuilder: (context, index) => Expanded(child: BankCardWidgets()),
           ),
+          Positioned(top: 600.h, child: Text('asjbdjajfd')),
         ],
       ),
     );
